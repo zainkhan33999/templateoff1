@@ -19,6 +19,7 @@ const Navbar = () => {
     const navItems = [
         { name: 'Home', id: 'home' },
         { name: 'About us', id: 'about' },
+        { name: 'Facilities', id: 'facilities' },
         { name: 'Tarrif', id: 'tarrif' },
         { name: 'Clients', id: 'clients' },
         { name: 'Gallery', id: 'gallery' },
@@ -29,8 +30,8 @@ const Navbar = () => {
     return (
         <div className='overflow-hidden'>
             {/* PC nav */}
-            <div className='hidden md:flex justify-between h-[15vh] items-center ml-3 mr-3 cursor-pointer'>
-                <Image alt='logo' src={logo} width={100} className='' />
+            <div className='hidden md:flex justify-between h-[15vh] items-center ml-3 mr-3  mt-5cursor-pointer'>
+                <Image alt='logo' src={logo} width={100} className='cursor-pointer' />
                 <ul className='uppercase flex gap-5'>
                     {navItems.map((item) => (
                         <li 

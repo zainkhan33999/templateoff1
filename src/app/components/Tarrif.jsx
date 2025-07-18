@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import {
   Table,
@@ -8,46 +9,44 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Card from '@/components/ui/Card';
 
-// Define type for tariff data
-
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer'
 
 const Tarrif = () => {
-  // Dynamic tariff data
-  const tariffData = [
-    { roomType: "Room", category: "Standard", price: "Rs 7000", tax: "+16% GST" },
-    { roomType: "Room", category: "Family", price: "Rs 8000", tax: "+16% GST" },
-    { roomType: "Room", category: "Deluxe", price: "Rs 9000", tax: "+16% GST" },
-    { roomType: "Room", category: "Galaxy", price: "Rs 10000", tax: "+16% GST" },
-    { roomType: "Room", category: "Executive suit", price: "Rs 12000", tax: "+16% GST" },
-  ];
+  const [textRef, textInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+  const textVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut"
+      }
+    }
+  }
+
 
   return (
-    <div className='ml-3 mr-3'>
-      <h1 className='text-3xl text-[#B19502] uppercase m-5'>Tariff</h1>
+    <motion.div className='ml-3 mr-3
+    ' initial='hidden'
+    ref={textRef}
+    animate={textInView ? "visible" : "hidden"}
+    variants={textVariants}>
+      <h1 className='text-3xl md:text-4xl text-[#B19502] text-center uppercase m-5'>Tariff</h1>
       
-      <Table className="">
-        <TableCaption className="text-black"></TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="">Room</TableHead>
-            <TableHead>Category</TableHead>
-            <TableHead>Price</TableHead>
-            <TableHead className="text-right">Tax</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {tariffData.map((tariff, index) => (
-            <TableRow key={index} className="hover:bg-[#B19502] hover:text-white">
-              <TableCell className="font-medium">{tariff.roomType}</TableCell>
-              <TableCell>{tariff.category}</TableCell>
-              <TableCell>{tariff.price}</TableCell>
-              <TableCell className="text-right">{tariff.tax}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+     
+      <div className='flex gap-3'>
+
+      <Card/>
+
+      </div>
+    </motion.div>
   );
 };
 

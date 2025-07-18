@@ -10,6 +10,7 @@ import Owned from "./components/Owned";
 
 import ContactME from "./components/ContactME";
 import Footer from "./components/Footer";
+import Facilities from "./components/Facilities";
 export default function Home() {
   return (
    <div className="overflow-y-hidden  ">
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar/>
      <section id="home"><Main/></section>
       <section id="about"><About/></section>
+      <section id="facilities"><Facilities/></section>
       <section id="tarrif"><Tarrif/></section>
       <section id="clients"><Client/></section>
       <section id="gallery"><Gallery/></section>

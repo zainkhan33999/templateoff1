@@ -40,17 +40,18 @@ const About = () => {
       }
     }
   }
+
   const handlebuttonClick = (sectionId) => {
-   
     const element = document.getElementById(sectionId);
     if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
     }
-};
+  };
+
   return (
-    <div className='mr-3 ml-3'>
+    <div className='px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto mt-5'>
       <motion.h1 
-        className='text-3xl text-[#B19502] uppercase m-5'
+        className='text-3xl md:text-4xl text-[#B19502] uppercase mb-6 md:mb-8 text-center '
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -58,20 +59,30 @@ const About = () => {
         About Us
       </motion.h1>
       
-      <div className='flex gap-5'>
+      <div className='flex flex-col md:flex-row gap-8'>
         <motion.section 
           ref={textRef}
           initial="hidden"
           animate={textInView ? "visible" : "hidden"}
           variants={textVariants}
-          className='w-[90vw] ml-4'
+          className='w-full md:w-1/2'
         >
-          <p className='text-md text-gray-400'>
+          <p className='text-gray-400 text-base md:text-lg leading-relaxed'>
             At "Regine inn" every individual is always ready to serve our valued guests with a smile round the clock. While staying with us you can enjoy exotic meals from our kitchen chef. Regine Inn's every room is equipped with T.V, DVD mini Bar and fastest free DSL internet connection round the clock. We have ample car parking for every room and separate visitors parking also. Regine Inn "Two star Hotel" is surrounded by famous hospitals, like Ziauddin, Agha Khan & South City Hospital & top of the line restaurants and shopping malls. We invite you to please come and visit us. We assure you sir that your visit will definitely make up your mind to choose "Regine Inn" as your official hotel for your upcoming business guests and company officials. 
           </p>
-          <div className='text-[#f5f5f5] flex gap-5 mt-5 cursor-pointer'>
-            <button  onClick={() => handlebuttonClick("clients")} className='border-2 cursor-pointer border-[#B19502] bg-[#B19502] hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-4 pr-4'>Clients</button>
-            <button  onClick={() => handlebuttonClick("owned")} className='border-2 cursor-pointer border-[#B19502] bg-[#B19502] hover:border-white transition-all duration-300 rounded pt-2 pb-2 pl-4 pr-4'>Owned</button>
+          <div className='flex flex-col sm:flex-row gap-4 mt-6'>
+            <button 
+              onClick={() => handlebuttonClick("clients")} 
+              className='border-2 cursor-pointer border-[#B19502] bg-[#B19502] text-white hover:bg-transparent hover:text-[#B19502] transition-all duration-300 rounded py-2 px-6 text-sm sm:text-base'
+            >
+              Clients
+            </button>
+            <button 
+              onClick={() => handlebuttonClick("owned")} 
+              className='border-2 cursor-pointer border-[#B19502] bg-[#B19502] text-white hover:bg-transparent hover:text-[#B19502] transition-all duration-300 rounded py-2 px-6 text-sm sm:text-base'
+            >
+              Owned
+            </button>
           </div>
         </motion.section>
 
@@ -80,13 +91,17 @@ const About = () => {
           initial="hidden"
           animate={imageInView ? "visible" : "hidden"}
           variants={imageVariants}
-          className='w-[50vw] hidden md:flex md:w-[100vw] md:text-center'
+          className='w-full md:w-1/2 flex justify-center'
         >
-          <Image 
-            alt='pic' 
-            className="h-[70vh] rounded" 
-            src={pic5}
-          />
+          <div className='relative w-full h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden'>
+            <Image 
+              alt='Hotel interior' 
+              src={pic5}
+              fill
+              className='object-cover'
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
         </motion.section>
       </div>
     </div>

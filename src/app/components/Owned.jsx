@@ -64,12 +64,12 @@ const Owned = () => {
     };
 
     return (
-        <div className='ml-3 mr-3'>
+        <div className='ml-3 mr-3  mt-10 '>
             <motion.h1 
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className='text-3xl text-[#B19502] uppercase m-5'
+                className='text-3xl md:text-4xl text-[#B19502] text-center uppercase m-5'
             >
                 Owned
             </motion.h1>
@@ -78,25 +78,25 @@ const Owned = () => {
                 variants={container}
                 initial="hidden"
                 whileInView="show"
+                className=''
                 viewport={{ once: true, margin: "-100px" }}
             >
-                <nav className="flex min-w-[240px] flex-col gap-1 p-1.5">
+                <nav className="grid grid-cols-1 md:grid-cols-2  gap-3 p-1.5">
                     {owned.map((client) => (
                         <motion.div
                             key={client.id}
                             variants={item}
                             role="button"
-                            className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-gray-200"
+                            className="text-slate-800 border-1 border-gray-400   flex w-full items-center rounded-md p-3 transition-all hover:bg-gray-200"
                             whileHover={{ scale: 1.02 }}
                         >
                             <motion.div 
-                                className="mr-4 grid place-items-center"
+                                className="mr-4 grid  place-items-center"
                                 whileHover={{ rotate: 5 }}
                             >
                                 <Image
                                     width={100}
                                     height={100}
-                                    objectFit='cover'
                                     alt={client.name}
                                     src={client.image}
                                     className="relative inline-block h-12 w-12 !rounded-full object-cover object-center"

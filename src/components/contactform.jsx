@@ -2,9 +2,9 @@
 
 export default function ContactForm() {
   return (
-    <section className="bg-white ml-3 mr-3 dark:bg-gray-900">
+    <section className="bg-white  ml-3 mr-3  mt-5 dark:bg-gray-900">
       <hr/>
-       <h1 className='text-3xl text-[#B19502] uppercase m-5'>Contact Us</h1>
+       <h1 className='text-3xl md:text-4xl text-[#B19502] text-center uppercase m-5 '>Contact Us</h1>
        
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <form action="#" className="space-y-4">
