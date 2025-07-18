@@ -19,7 +19,8 @@ const Navbar = () => {
     const navItems = [
         { name: 'Home', id: 'home' },
         { name: 'About us', id: 'about' },
-        { name: 'Facilities', id: 'facilities' },
+        { name: 'Experiences', id: 'experiences' },
+        { name: 'Facilities', id: 'f    acilities' },
         { name: 'Tarrif', id: 'tarrif' },
         { name: 'Clients', id: 'clients' },
         { name: 'Gallery', id: 'gallery' },

@@ -7,10 +7,11 @@ import Tarrif from "./components/Tarrif";
 import Client from "./components/Client";
 import Gallery from "./components/Gallery";
 import Owned from "./components/Owned";
-
 import ContactME from "./components/ContactME";
 import Footer from "./components/Footer";
 import Facilities from "./components/Facilities";
+import Experiences from "./components/Experiences";
+
 export default function Home() {
   return (
    <div className="overflow-y-hidden  ">
@@ -20,6 +21,7 @@ export default function Home() {
      <section id="home"><Main/></section>
       <section id="about"><About/></section>
       <section id="facilities"><Facilities/></section>
+      <section id="experiences"><Experiences/></section>
       <section id="tarrif"><Tarrif/></section>
       <section id="clients"><Client/></section>
       <section id="gallery"><Gallery/></section>

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import fac1 from "../../asset/fac1.avif"
 import fac2 from "../../asset/fac2.jpg"
@@ -23,13 +23,27 @@ const Facilities = () => {
     { src: fac2, alt: "Facility 2", text: "Luxury Rooms" },
     { src: fac3, alt: "Facility 3", text: "High Security" },
     { src: fac4, alt: "Facility 4", text: "Gym" },
-  
   ];
 
+  const [api, setApi] = useState("")
+  const [current, setCurrent] = useState(0)
+  
   const [textRef, textInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  useEffect(() => {
+    if (!api) return
+
+    const interval = setInterval(() => {
+      api.scrollNext()
+      
+    }, 3000) // Change slide every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [api])
+
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { 
@@ -44,14 +58,18 @@ const Facilities = () => {
 
   return (
     <motion.div
-    initial="hidden"
-    className=''
-    ref={textRef}
-    animate={textInView ? "visible" : "hidden"}
-    variants={textVariants}>
+      initial="hidden"
+      className=''
+      ref={textRef}
+      animate={textInView ? "visible" : "hidden"}
+      variants={textVariants}
+    >
       <h1 className='text-3xl md:text-4xl text-center text-[#B19502] uppercase m-5'>Facilities</h1>
       <div className="max-w-4xl mx-auto py-8 px-4">
-        <Carousel className="w-full">
+        <Carousel 
+          className="w-full"
+          setApi={setApi}
+        >
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
