@@ -116,7 +116,7 @@ const Client = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className='text-3xl md:text-4xl text-[#B19502] text-center  uppercase m-5'
+        className='text-3xl text-[#B19502] text-center  uppercase m-5'
       >
         CLIENTS
       </motion.h1>
@@ -126,7 +126,7 @@ const Client = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className='flex flex-col md:flex-row'
+        className='flex justify-center items-center flex-col md:flex-row'
       >
         {clientColumns.map((column, columnIndex) => (
           <motion.div 
@@ -134,7 +134,7 @@ const Client = () => {
             variants={item}
             className="w-full md:w-96 rounded-lg border border-slate-200 bg-white shadow-sm mx-2 mb-4 md:mb-0"
           >
-            <nav className="flex min-w-[240px] flex-col gap-1 p-1.5">
+            <nav className="flex   min-w-[240px] flex-col gap-1 p-1.5">
               {column.map(client => (
                 <motion.div
                   key={client.id}

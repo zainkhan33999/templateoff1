@@ -3,7 +3,7 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa"
 const Header = () => {
   return (
-    <div className='h-[7vh] bg-[#B19502] flex  gap-10'>
+    <div className='h-[7vh] bg-[#B19502] flex     gap-10'>
         <div className=' w-full  flex  items-center  justify-center gap-5 text-[#151412] '>
         <div id='email' className='flex gap-2 items-center'>
         <MdEmail className='text-white'/>
