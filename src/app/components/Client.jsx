@@ -1,88 +1,105 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { CiCircleMore } from "react-icons/ci";
+import client1 from "../../asset/client1.png";
+import client2 from "../../asset/client2.png";
+import client3 from "../../asset/client3.png";
+import client4 from "../../asset/client4.png";
+import client5 from "../../asset/client5.png";
+import client6 from "../../asset/client6.jpg";
+import client7 from "../../asset/client6.png";
+import client8 from "../../asset/client8.png";
+import client9 from "../../asset/client9.png";
+import client10 from "../../asset/client10.png";
+import client11 from "../../asset/client11.png";
+import client12 from "../../asset/client12.png";
+import client13 from "../../asset/client13.jpg";
+import client14 from "../../asset/client14.jpg";
+import client15 from "../../asset/client15.jpg";
+import client16 from "../../asset/client16.jpg";
+import Image from 'next/image';
 const Client = () => {
   const clients = [
     {
       id: 1,
       name: "Mari Petroleum",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      logo:client1,
     },
     {
       id: 2,
-      name: "Baluchistan Glass",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "Australian Concept",
+      logo:client2,
     },
     {
       id: 3,
-      name: "Hilong Oil Company",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "Bahria Town",
+      logo: client3,
     },
     {
       id: 4,
-      name: "Exalo Drilling",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "Bank Alfalah",
+      logo:client4,
     },
     {
       id: 5,
-      name: "Australian Concept",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "Balochistan Glass",
+      logo: client5,
     },
     {
       id: 6,
       name: "Ali Asgher Lahore",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      logo: client6,
     },
     {
       id: 7,
-      name: "KCA Duetag",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "Exalo Drilling",
+      logo: client7,
     },
     {
       id: 8,
-      name: "Orient Electronics",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "KCA Duetag",
+      logo: client8,
     },
     {
       id: 9,
-      name: "Bahria Town",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "Orient Electronics",
+      logo: client9,
     },
     {
       id: 10,
       name: "Bank Of Khyber",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      logo: client10,
     },
     {
       id: 11,
       name: "United Bank Ltd",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      logo: client11
     },
     {
       id: 12,
       name: "National Bank",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      logo:  client12
     },
     {
       id: 13,
-      name: "Bank Alfalah",
-      logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+      name: "Express News",
+      logo: client13
     },
     {
         id: 14,
-        name: "Express News",
-        logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+        name: "Samma TV",
+        logo: client14
       },
       {
         id: 15,
-        name: "Samma TV",
-        logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+        name: "Dawn News",
+        logo: client15
       },
       {
         id: 16,
         name: "And many more",
-        logo: "https://docs.material-tailwind.com/img/face-2.jpg"
+        logo:  client16,
       },
 
   ];
@@ -144,12 +161,15 @@ const Client = () => {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="mr-4 grid place-items-center">
-                    <motion.img
-                      alt={client.name}
+                    <motion.div>
+                      <Image
+                      width={100}
+                      height={100}
                       src={client.logo}
+                      alt={client.name}
                       className="relative inline-block h-12 w-12 !rounded-full object-cover object-center"
-                      whileHover={{ rotate: 10}}
-                    />
+                      />
+                    </motion.div>
                   </div>
                   <div>
                     <h6 className="text-slate-800 font-medium">
