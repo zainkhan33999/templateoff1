@@ -20,32 +20,43 @@ import {
 
 const Facilities = () => {
   const images = [
-    { src: fac1, alt: "Facility 1", text: "Awsome Food" },
-    { src: fac2, alt: "Facility 2", text: "Luxury Rooms" },
-    { src: fac3, alt: "Facility 3", text: "High Security" },
-    { src: fac4, alt: "Facility 4", text: "Gym" },
-    { src: fac7, alt: "Facility 7", text: "Clean Enviorment" },
+    { index:1, src: fac1, alt: "Facility 1", text: "Awsome Food" },
+    { index:2, src: fac2, alt: "Facility 2", text: "Luxury Rooms" },
+    { index:3, src: fac3, alt: "Facility 3", text: "High Security" },
+    { index:4, src: fac4, alt: "Facility 4", text: "Gym" },
+    { index:5, src: fac7, alt: "Facility 7", text: "Clean Enviorment" },
   ];
-    
 
-  const [api, setApi] = useState("")
-  const [current, setCurrent] = useState(0)
-  
+  const [api, setApi] = useState(null);
+  const [isScrollingForward, setIsScrollingForward] = useState(true);
   const [textRef, textInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   useEffect(() => {
-    if (!api) return
+    if (!api) return;
 
     const interval = setInterval(() => {
-      api.scrollNext()
-      
-    }, 5000) // Change slide every 3 seconds
+      if (isScrollingForward) {
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          setIsScrollingForward(false);
+          api.scrollPrev();
+        }
+      } else {
+        if (api.canScrollPrev()) {
+          api.scrollPrev();
+        } else {
+          setIsScrollingForward(true);
+          api.scrollNext();
+        }
+      }
+    }, 3000); // Change slide every 3 seconds
 
-    return () => clearInterval(interval)
-  }, [api])
+    return () => clearInterval(interval);
+  }, [api, isScrollingForward]);
 
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
@@ -57,7 +68,7 @@ const Facilities = () => {
         ease: "easeInOut"
       }
     }
-  }
+  };
 
   return (
     <motion.div
@@ -68,7 +79,7 @@ const Facilities = () => {
       variants={textVariants}
     >
       <h1 className='text-3xl md:text-4xl text-center text-[#B19502] uppercase m-5'>Facilities</h1>
-      <div className="max-w-4xl mx-auto py-8 px-4">
+      <div className="max-w-4xl  rounded mx-auto py-8 px-4">
         <Carousel 
           className="w-full"
           setApi={setApi}
@@ -99,7 +110,7 @@ const Facilities = () => {
         </Carousel>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Facilities
+export default Facilities;

@@ -1,35 +1,73 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
-import main1 from "../../asset/main2.jpg"
+import React, { useState, useEffect } from 'react'
+import main1 from "../../asset/main1.jpg"
+import main2 from "../../asset/main2.jpg" // Add more images
+import main3 from "../../asset/main3.jpg"
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Main = () => {
+  const images = [
+    { src: main1, alt: "Hotel room 1" },
+    { src: main2, alt: "Hotel room 2" },
+    { src: main3, alt: "Hotel room 3" },
+   
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const handlebuttonClick = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsAnimating(false);
+      }, 100); // This matches the fade duration
+    }, 5000); // Change image every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <div className="relative w-full h-screen overflow-hidden font-lora ">
-      {/* Image with full viewport coverage */}
-      <Image 
-        src={main1} 
-        fill
-        className="object-cover brightness-50" // Reduced brightness more
-        alt='Hotel room'
-        priority // Add priority if this is above the fold
-      />
+    <div className="relative w-full h-screen overflow-hidden font-lora">
+      {/* Image slideshow with fade animation */}
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={currentImageIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          <Image 
+            src={images[currentImageIndex].src} 
+            fill
+            className="object-cover brightness-50"
+            alt={images[currentImageIndex].alt}
+            priority
+          />
+        </motion.div>
+      </AnimatePresence>
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40"></div> {/* Semi-transparent black overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
       
       {/* Text overlay */}
-      <div className="absolute inset-0 flex flex-col  gap-2 items-center justify-center">
+      <div className="absolute inset-0 flex flex-col gap-2 items-center justify-center">
         <section>
-          <h1 className="text-white text-3xl md:text-4xl font-bold  text-center px-4">
-          Luxurious & Comfortable Rooms Are Available In Our Hotel
+          <h1 className="text-white text-3xl md:text-4xl font-bold text-center px-4">
+            Luxurious & Comfortable Rooms Are Available In Our Hotel
           </h1>
         </section>
         <section>
