@@ -33,7 +33,7 @@ const Navbar = () => {
             {/* PC nav */}
             <div className='hidden md:flex justify-between h-[15vh] items-center ml-3 mr-3  mt-5cursor-pointer'>
                 <Image alt='logo' src={logo} width={100} className='cursor-pointer' />
-                <ul className='uppercase flex gap-5'>
+                <ul className=' uppercase flex gap-5'>
                     {navItems.map((item) => (
                         <li 
                             key={item.id} 

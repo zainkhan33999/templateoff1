@@ -7,6 +7,7 @@ import fac3 from "../../asset/fac3.jpg"
 import fac4 from "../../asset/fac4.jpg"
 import fac5 from "../../asset/fac5.jpg"
 import fac6 from "../../asset/fac6.jpg"
+import fac7 from "../../asset/fac7.jpg"
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'
 import {
@@ -23,7 +24,9 @@ const Facilities = () => {
     { src: fac2, alt: "Facility 2", text: "Luxury Rooms" },
     { src: fac3, alt: "Facility 3", text: "High Security" },
     { src: fac4, alt: "Facility 4", text: "Gym" },
+    { src: fac7, alt: "Facility 7", text: "Clean Enviorment" },
   ];
+    
 
   const [api, setApi] = useState("")
   const [current, setCurrent] = useState(0)
@@ -39,7 +42,7 @@ const Facilities = () => {
     const interval = setInterval(() => {
       api.scrollNext()
       
-    }, 3000) // Change slide every 3 seconds
+    }, 5000) // Change slide every 3 seconds
 
     return () => clearInterval(interval)
   }, [api])
@@ -79,7 +82,7 @@ const Facilities = () => {
                     alt={image.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
                   />
                   {/* Text overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
