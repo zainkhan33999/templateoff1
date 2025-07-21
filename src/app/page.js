@@ -14,18 +14,18 @@ import Experiences from "./components/Experiences";
 
 export default function Home() {
   return (
-   <div className="overflow-y-hidden  ">
+   <div className="">
 
       <Header/>
       <Navbar/>
      <section id="home"><Main/></section>
       <section id="about"><About/></section>
       <section id="facilities"><Facilities/></section>
-      <section id="experiences"><Experiences/></section>
       <section id="tarrif"><Tarrif/></section>
       <section id="clients"><Client/></section>
       <section id="gallery"><Gallery/></section>
       <section id="owned"><Owned/></section>  
+      <section id="experiences"><Experiences/></section>
       <section id="contact"><ContactME/></section>
       <Footer/>
    </div>

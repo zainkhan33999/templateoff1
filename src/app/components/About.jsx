@@ -51,7 +51,7 @@ const About = () => {
   return (
     <div className='px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto mt-5'>
       <motion.h1 
-        className='text-3xl md:text-4xl text-[#B19502] uppercase mb-6 md:mb-8 text-center '
+        className='text-3xl md:text-4xl text-primary uppercase mb-6 md:mb-8 text-center '
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -73,13 +73,13 @@ const About = () => {
           <div className='flex flex-col sm:flex-row gap-4 mt-6'>
             <button 
               onClick={() => handlebuttonClick("clients")} 
-              className='border-2 cursor-pointer border-[#B19502] bg-[#B19502] text-white hover:bg-transparent hover:text-[#B19502] transition-all duration-300 rounded py-2 px-6 text-sm sm:text-base'
+              className='border-2 cursor-pointer border-primary bg-primary text-white hover:bg-transparent hover:text-primary transition-all duration-300 rounded py-2 px-6 text-sm sm:text-base'
             >
               Clients
             </button>
             <button 
               onClick={() => handlebuttonClick("owned")} 
-              className='border-2 cursor-pointer border-[#B19502] bg-[#B19502] text-white hover:bg-transparent hover:text-[#B19502] transition-all duration-300 rounded py-2 px-6 text-sm sm:text-base'
+              className='border-2 cursor-pointer border-primary bg-primary text-white hover:bg-transparent hover:text-primary transition-all duration-300 rounded py-2 px-6 text-sm sm:text-base'
             >
               Owned
             </button>

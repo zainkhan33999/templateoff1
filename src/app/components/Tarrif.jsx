@@ -38,7 +38,7 @@ const Tarrif = () => {
     ref={textRef}
     animate={textInView ? "visible" : "hidden"}
     variants={textVariants}>
-      <h1 className='text-3xl md:text-4xl text-[#B19502] text-center uppercase m-5'>Tariff</h1>
+      <h1 className='text-3xl md:text-4xl text-primary text-center uppercase m-5'>Tariff</h1>
       
      
       <div className='flex gap-3'>

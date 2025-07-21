@@ -4,7 +4,7 @@ export default function ContactForm() {
   return (
     <section className="bg-white  ml-3 mr-3  mt-5 dark:bg-gray-900">
       <hr/>
-       <h1 className='text-3xl md:text-4xl text-[#B19502] text-center uppercase m-5 '>Contact Us</h1>
+       <h1 className='text-3xl md:text-4xl text-primary text-center uppercase m-5 '>Contact Us</h1>
        
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <form action="#" className="space-y-4">
@@ -96,7 +96,7 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="py-3 px-5 text-sm font-medium text-center text-white bg-[#B19502] cursor-pointer rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            className="py-3 px-5 text-sm font-medium text-center text-white bg-primary cursor-pointer rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
           >
             Send message
           </button>

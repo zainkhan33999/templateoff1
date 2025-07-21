@@ -13,20 +13,18 @@ const Footer = () => {
         }
     };
   return (
-<div className="footer bg-[#151412] text-white p-10 ">
+<div className="footer bg-secondary text-white p-10 ">
   <section className='flex items-center justify-between '>
 
     <div className="copyright text-sm font-normal flex items-center gap-5">
       <Image alt='logo' src={logo} width={100} className='rounded-sm cursor-pointer' />
-      <p>Design & developed by Sibex Systems ©-Copyright 2015</p>
+      <p>Design & developed by Sibex Systems ©- 2025</p>
     </div>
-    <a  onClick={()=>handlebuttonClick("home")} className=" cursor-pointer scroll-smooth inline-flex items-center justify-center bg-[#B19502]  w-[45px] h-[45px] rounded-full text-[var(--text-color)] text-[27px]">
+    <a  onClick={()=>handlebuttonClick("home")} className=" cursor-pointer scroll-smooth inline-flex items-center justify-center bg-primary  w-[45px] h-[45px] rounded-full text-[var(--text-color)] text-[27px]">
       <FaArrowUp className=''/>
     </a>
   </section>
-    <div className='socials flex gap-2'>
-    <CiInstagram />
-    </div>
+   
   </div>
   )
 }

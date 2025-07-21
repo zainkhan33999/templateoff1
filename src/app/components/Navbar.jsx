@@ -37,7 +37,7 @@ const Navbar = () => {
                     {navItems.map((item) => (
                         <li 
                             key={item.id} 
-                            className='cursor-pointer hover:text-[#B19502] transition-colors duration-200'
+                            className='cursor-pointer hover:text-primary transition-colors duration-200'
                             onClick={() => handleNavClick(item.id)}
                         >
                             {item.name}
@@ -52,7 +52,7 @@ const Navbar = () => {
                     <div>
                         <Image alt='logo' src={logo} width={100} className='' />
                     </div>
-                    <div className='border p-1 border-[#B19502]'>
+                    <div className='border p-1 border-primary'>
                         <RxHamburgerMenu onClick={() => setNavState(!navState)} size={30} />
                     </div>
                 </section>
@@ -63,7 +63,7 @@ const Navbar = () => {
                             {navItems.map((item) => (
                                 <li 
                                     key={item.id}
-                                    className='cursor-pointer active:bg-[#B19502] active:text-white hover:text-[#B19502] transition-colors duration-200 px-2 py-1'
+                                    className='cursor-pointer active:bg-primary active:text-white hover:text-primary transition-colors duration-200 px-2 py-1'
                                     onClick={() => handleNavClick(item.id)}
                                 >
                                     {item.name}

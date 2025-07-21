@@ -31,7 +31,7 @@ const Gallery = () => {
     return (
         <div className='ml-3 mr-3 mt-10 flex flex-col  items-center gap-5 justify-center'>
             <motion.h1 
-                className='text-3xl md:text-4xl text-[#B19502] text-center uppercase m-5'
+                className='text-3xl md:text-4xl text-primary text-center uppercase m-5'
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}

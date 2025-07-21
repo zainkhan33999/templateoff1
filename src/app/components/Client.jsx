@@ -133,7 +133,7 @@ const Client = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className='text-3xl text-[#B19502] text-center  uppercase m-5'
+        className='text-3xl text-primary text-center  uppercase m-5'
       >
         CLIENTS
       </motion.h1>
@@ -143,7 +143,7 @@ const Client = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className='flex justify-center items-center flex-col md:flex-row'
+        className='flex justify-center items-center  flex-col md:flex-row lg:flex-row'
       >
         {clientColumns.map((column, columnIndex) => (
           <motion.div 
@@ -161,7 +161,8 @@ const Client = () => {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="mr-4 grid place-items-center">
-                    <motion.div>
+                    <motion.div
+                     whileHover={{ rotate: 5 }}>
                       <Image
                       width={100}
                       height={100}

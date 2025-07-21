@@ -64,8 +64,8 @@ const Experiences = () => {
       setTimeout(() => {
         setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
         setFade(true);
-      }, 500); // This matches the transition duration
-    }, 5000); // Change every 5 seconds
+      }, 500); 
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
@@ -77,7 +77,7 @@ const Experiences = () => {
     variants={textVariants}
   
      className="bg-gray-50 dark:bg-gray-800 py-12">
-      <h1 className='text-3xl md:text-4xl text-[#B19502] text-center uppercase mb-5 font-serif'>Guest Experiences</h1>
+      <h1 className='text-3xl md:text-4xl text-primary text-center uppercase mb-5 font-serif'>Guest Experiences</h1>
       <section className="bg-white dark:bg-gray-900 shadow-lg rounded-lg max-w-4xl mx-auto">
         <div className="px-8 py-12 mx-auto text-center">
           <figure className="max-w-3xl mx-auto">

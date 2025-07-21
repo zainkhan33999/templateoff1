@@ -78,7 +78,7 @@ const Facilities = () => {
       animate={textInView ? "visible" : "hidden"}
       variants={textVariants}
     >
-      <h1 className='text-3xl md:text-4xl text-center text-[#B19502] uppercase m-5'>Facilities</h1>
+      <h1 className='text-3xl md:text-4xl text-center text-primary uppercase m-5'>Facilities</h1>
       <div className="max-w-4xl  rounded mx-auto py-8 px-4">
         <Carousel 
           className="w-full"

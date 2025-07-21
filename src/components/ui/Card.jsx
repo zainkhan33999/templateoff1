@@ -82,8 +82,8 @@ const roomTypes = [
                 <p className='text-md font-semibold text-green-500'>{room.price}</p>
               </div>
               <div className='flex flex-col gap-3'>
-                <button className='py-2 px-5 border-2 cursor-pointer border-gray-300 mt-4 text-[#B19502] font-medium rounded-md hover:bg-[#B19502] hover:text-white transition-colors duration-300'>
-                  Book Now
+                <button className='py-2 px-5 border-2 cursor-pointer border-gray-300 mt-4 text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors duration-300'>
+                  Book Now  
                 </button>
               </div>
             </div>

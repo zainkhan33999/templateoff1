@@ -138,3 +138,7 @@
     font-display: swap;
   }
 }
+:root {
+  --primary: #B19502;
+  --secondary: #151412;
+}
