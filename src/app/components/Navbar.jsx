@@ -31,8 +31,8 @@ const Navbar = () => {
     return (
         <div className='overflow-hidden'>
             {/* PC nav */}
-            <div className='hidden md:flex justify-between h-[15vh] items-center ml-3 mr-3  mt-5cursor-pointer'>
-                <Image alt='logo' src={logo} width={100} className='cursor-pointer' />
+            <div className='hidden md:flex justify-center h-[15vh] items-center ml-3 mr-3  mt-5cursor-pointer'>
+              
                 <ul className=' uppercase flex gap-5'>
                     {navItems.map((item) => (
                         <li 
@@ -50,7 +50,7 @@ const Navbar = () => {
             <div className='md:hidden'>
                 <section className='flex justify-between h-[8vh] items-center cursor-pointer mr-2 ml-2 transition-all duration-300 ease-in-out'>
                     <div>
-                        <Image alt='logo' src={logo} width={100} className='' />
+                        <h1 className='font-primary text-primary font-bold uppercase'>Hotel Demoinn</h1>
                     </div>
                     <div className='border p-1 border-primary'>
                         <RxHamburgerMenu onClick={() => setNavState(!navState)} size={30} />

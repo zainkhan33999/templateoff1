@@ -13,7 +13,7 @@ const Owned = () => {
   const owned = [
     {
         id:1,
-      name: "Hotel Regine Inn",
+      name: "Hotel demo Inn",
       description: "Luxury accommodation with premium amenities",
       image: pic11// Replace with actual image path
     },
@@ -43,7 +43,7 @@ const Owned = () => {
     },
     {
         id:6,
-      name: "Regine Properties (Real Estate & Builders)",
+      name: "demo Properties (Real Estate & Builders)",
       description: "Property development and real estate services",
       image: owned6
     }

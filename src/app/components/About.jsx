@@ -68,7 +68,7 @@ const About = () => {
           className='w-full md:w-1/2'
         >
           <p className='text-gray-400 text-base md:text-lg leading-relaxed'>
-            At "Regine inn" every individual is always ready to serve our valued guests with a smile round the clock. While staying with us you can enjoy exotic meals from our kitchen chef. Regine Inn's every room is equipped with T.V, DVD mini Bar and fastest free DSL internet connection round the clock. We have ample car parking for every room and separate visitors parking also. Regine Inn "Two star Hotel" is surrounded by famous hospitals, like Ziauddin, Agha Khan & South City Hospital & top of the line restaurants and shopping malls. We invite you to please come and visit us. We assure you sir that your visit will definitely make up your mind to choose "Regine Inn" as your official hotel for your upcoming business guests and company officials. 
+            At "demo inn" every individual is always ready to serve our valued guests with a smile round the clock. While staying with us you can enjoy exotic meals from our kitchen chef. demo Inn's every room is equipped with T.V, DVD mini Bar and fastest free DSL internet connection round the clock. We have ample car parking for every room and separate visitors parking also. demo Inn "Two star Hotel" is surrounded by famous hospitals, like Ziauddin, Agha Khan & South City Hospital & top of the line restaurants and shopping malls. We invite you to please come and visit us. We assure you sir that your visit will definitely make up your mind to choose "demo Inn" as your official hotel for your upcoming business guests and company officials. 
           </p>
           <div className='flex flex-col sm:flex-row gap-4 mt-6'>
             <button 
